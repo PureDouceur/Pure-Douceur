@@ -1,0 +1,2216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pure Douceur — Savons & Soins</title>
+<link rel="icon" href="favicon.png" type="image/png">
+
+
+<style>
+
+/* =========================
+   PURE DOUCEUR
+   ONE-FILE E-COMMERCE
+========================= */
+
+:root{
+    --cream:#fffaf3;
+    --cream2:#f7eee4;
+    --burgundy:#7b1830;
+    --burgundy-dark:#561022;
+    --gold:#c7a15a;
+    --brown:#3b2925;
+    --white:#ffffff;
+    --gray:#777;
+    --black:#171313;
+    --shadow:0 10px 35px rgba(70,30,35,.10);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--cream);
+    color:var(--brown);
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,250,243,.96);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #eaded2;
+}
+
+.navbar{
+    max-width:1250px;
+    margin:auto;
+    height:82px;
+    padding:10px 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    cursor:pointer;
+}
+
+.logo img{
+    width:62px;
+    height:62px;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+.logo-text{
+    font-family:Georgia,serif;
+    color:var(--burgundy);
+    font-size:25px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+    align-items:center;
+}
+
+nav a{
+    color:var(--brown);
+    text-decoration:none;
+    font-weight:600;
+    font-size:15px;
+}
+
+nav a:hover{
+    color:var(--burgundy);
+}
+
+.nav-actions{
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+
+.icon-btn{
+    border:0;
+    background:transparent;
+    cursor:pointer;
+    font-size:22px;
+    position:relative;
+    color:var(--brown);
+}
+
+.cart-count{
+    position:absolute;
+    top:-8px;
+    right:-10px;
+    background:var(--burgundy);
+    color:white;
+    width:19px;
+    height:19px;
+    font-size:11px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.menu-btn{
+    display:none;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:600px;
+    display:flex;
+    align-items:center;
+    background:
+        radial-gradient(circle at 85% 30%,#ead0c8 0,transparent 28%),
+        linear-gradient(135deg,#fffaf3,#f6e9df);
+}
+
+.hero-inner{
+    width:100%;
+    max-width:1250px;
+    margin:auto;
+    padding:80px 25px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:50px;
+}
+
+.hero-tag{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:62px;
+    line-height:1.05;
+    color:var(--burgundy);
+    margin-bottom:22px;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.7;
+    color:#604c48;
+    max-width:520px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    border:0;
+    background:var(--burgundy);
+    color:white;
+    padding:15px 28px;
+    border-radius:4px;
+    font-weight:bold;
+    text-decoration:none;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.btn:hover{
+    background:var(--burgundy-dark);
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    background:transparent;
+    border:1px solid var(--burgundy);
+    color:var(--burgundy);
+    margin-left:10px;
+}
+
+.btn-outline:hover{
+    background:var(--burgundy);
+    color:white;
+}
+
+.hero-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.hero-card{
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:#ead5ce;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:var(--shadow);
+}
+
+.hero-card img{
+    width:80%;
+    max-height:85%;
+    object-fit:contain;
+    filter:drop-shadow(0 20px 20px rgba(0,0,0,.15));
+}
+
+/* ================= TRUST ================= */
+
+.trust{
+    background:var(--burgundy);
+    color:white;
+}
+
+.trust-inner{
+    max-width:1250px;
+    margin:auto;
+    padding:28px 25px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.trust-item{
+    text-align:center;
+}
+
+.trust-item strong{
+    display:block;
+    font-size:16px;
+    margin-bottom:5px;
+}
+
+.trust-item span{
+    font-size:13px;
+    opacity:.8;
+}
+
+/* ================= SECTIONS ================= */
+
+.section{
+    max-width:1250px;
+    margin:auto;
+    padding:85px 25px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title small{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-weight:bold;
+}
+
+.section-title h2{
+    font-family:Georgia,serif;
+    font-size:40px;
+    color:var(--burgundy);
+    margin-top:10px;
+}
+
+/* ================= PRODUCTS ================= */
+
+.controls{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.search{
+    padding:13px 18px;
+    border:1px solid #ded1c8;
+    background:white;
+    border-radius:5px;
+    min-width:250px;
+    outline:none;
+}
+
+.search:focus{
+    border-color:var(--burgundy);
+}
+
+.filter{
+    padding:13px 18px;
+    border:1px solid #ded1c8;
+    background:white;
+    border-radius:5px;
+    outline:none;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.product{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:.25s;
+    position:relative;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+}
+
+.product-image{
+    height:270px;
+    background:#f8f3ed;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+}
+
+.product-info{
+    padding:20px;
+}
+
+.product-category{
+    color:var(--gold);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    font-weight:bold;
+}
+
+.product h3{
+    margin:7px 0;
+    color:var(--brown);
+    font-family:Georgia,serif;
+}
+
+.product-description{
+    color:var(--gray);
+    font-size:13px;
+    line-height:1.5;
+    min-height:40px;
+}
+
+.price{
+    color:var(--burgundy);
+    font-size:19px;
+    font-weight:bold;
+    margin:14px 0;
+}
+
+.add-btn{
+    width:100%;
+    padding:12px;
+    background:var(--burgundy);
+    border:0;
+    color:white;
+    border-radius:4px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.add-btn:hover{
+    background:var(--burgundy-dark);
+}
+
+.badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+    background:var(--gold);
+    color:white;
+    padding:6px 10px;
+    border-radius:20px;
+    font-size:11px;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    background:var(--cream2);
+}
+
+.about-inner{
+    max-width:1250px;
+    margin:auto;
+    padding:85px 25px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-box{
+    background:white;
+    padding:45px;
+    border-radius:10px;
+    box-shadow:var(--shadow);
+}
+
+.about-box h2{
+    font-family:Georgia,serif;
+    color:var(--burgundy);
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.about-box p{
+    line-height:1.8;
+    color:#66534d;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.feature{
+    padding:25px;
+    background:white;
+    border-radius:8px;
+}
+
+.feature-icon{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.feature h3{
+    color:var(--burgundy);
+    margin-bottom:8px;
+}
+
+/* ================= NEWSLETTER ================= */
+
+.newsletter{
+    background:var(--burgundy);
+    color:white;
+    text-align:center;
+    padding:70px 25px;
+}
+
+.newsletter h2{
+    font-family:Georgia,serif;
+    font-size:38px;
+    margin-bottom:12px;
+}
+
+.newsletter p{
+    opacity:.85;
+    margin-bottom:25px;
+}
+
+.newsletter-form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+}
+
+.newsletter-form input{
+    flex:1;
+    padding:15px;
+    border:0;
+    outline:none;
+}
+
+.newsletter-form button{
+    padding:15px 22px;
+    border:0;
+    background:var(--gold);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#2b1c1a;
+    color:white;
+}
+
+.footer-inner{
+    max-width:1250px;
+    margin:auto;
+    padding:55px 25px;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-brand h2{
+    font-family:Georgia,serif;
+    color:#e0bf7b;
+    margin-bottom:15px;
+}
+
+.footer-brand p{
+    color:#c9b9b5;
+    line-height:1.6;
+}
+
+footer h3{
+    margin-bottom:15px;
+    color:#e0bf7b;
+}
+
+footer a{
+    display:block;
+    text-decoration:none;
+    color:#c9b9b5;
+    margin-bottom:10px;
+}
+
+footer a:hover{
+    color:white;
+}
+
+.copyright{
+    border-top:1px solid #493633;
+    text-align:center;
+    padding:20px;
+    color:#ad9c98;
+    font-size:13px;
+}
+
+/* ================= CART SIDEBAR ================= */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.4);
+    z-index:1500;
+    display:none;
+}
+
+.overlay.active{
+    display:block;
+}
+
+.cart{
+    position:fixed;
+    right:-430px;
+    top:0;
+    height:100vh;
+    width:420px;
+    background:white;
+    z-index:2000;
+    transition:.3s;
+    display:flex;
+    flex-direction:column;
+    box-shadow:-10px 0 30px rgba(0,0,0,.15);
+}
+
+.cart.open{
+    right:0;
+}
+
+.cart-header{
+    padding:25px;
+    border-bottom:1px solid #eee;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.cart-header h2{
+    color:var(--burgundy);
+    font-family:Georgia,serif;
+}
+
+.close{
+    border:0;
+    background:transparent;
+    font-size:25px;
+    cursor:pointer;
+}
+
+.cart-items{
+    flex:1;
+    overflow:auto;
+    padding:20px;
+}
+
+.cart-item{
+    display:flex;
+    gap:12px;
+    padding:15px 0;
+    border-bottom:1px solid #eee;
+}
+
+.cart-item img{
+    width:75px;
+    height:75px;
+    object-fit:contain;
+    background:#f7f2ed;
+    border-radius:5px;
+}
+
+.cart-item-info{
+    flex:1;
+}
+
+.cart-item-info h4{
+    margin-bottom:5px;
+}
+
+.cart-price{
+    color:var(--burgundy);
+    font-weight:bold;
+}
+
+.qty{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:8px;
+}
+
+.qty button{
+    width:25px;
+    height:25px;
+    border:1px solid #ddd;
+    background:white;
+    cursor:pointer;
+}
+
+.remove{
+    border:0;
+    background:none;
+    color:#a33;
+    cursor:pointer;
+    font-size:12px;
+    margin-top:5px;
+}
+
+.cart-footer{
+    padding:20px;
+    border-top:1px solid #eee;
+}
+
+.total{
+    display:flex;
+    justify-content:space-between;
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.checkout-btn{
+    width:100%;
+}
+
+/* ================= CHECKOUT MODAL ================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.5);
+    z-index:3000;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    background:white;
+    width:100%;
+    max-width:600px;
+    max-height:90vh;
+    overflow:auto;
+    border-radius:10px;
+    padding:30px;
+}
+
+.modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.modal-header h2{
+    font-family:Georgia,serif;
+    color:var(--burgundy);
+}
+
+.form-group{
+    margin-bottom:16px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:bold;
+    font-size:14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:4px;
+    outline:none;
+    font-family:inherit;
+}
+
+.form-group textarea{
+    min-height:80px;
+    resize:vertical;
+}
+
+.order-summary{
+    background:#faf5ef;
+    padding:18px;
+    margin:20px 0;
+    border-radius:6px;
+}
+
+.payment-options{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+}
+
+.payment{
+    border:1px solid #ddd;
+    padding:15px 5px;
+    text-align:center;
+    cursor:pointer;
+    border-radius:5px;
+    font-size:13px;
+}
+
+.payment.selected{
+    border:2px solid var(--burgundy);
+    background:#fff5f7;
+}
+
+.success{
+    text-align:center;
+    padding:30px 10px;
+}
+
+.success .check{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:950px){
+
+    nav{
+        display:none;
+        position:absolute;
+        top:82px;
+        left:0;
+        right:0;
+        background:var(--cream);
+        flex-direction:column;
+        padding:25px;
+        border-bottom:1px solid #ddd;
+    }
+
+    nav.mobile-open{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero-inner{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-card{
+        width:330px;
+        height:330px;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .trust-inner{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-inner{
+        grid-template-columns:1fr;
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        padding:10px 15px;
+    }
+
+    .logo-text{
+        font-size:19px;
+    }
+
+    .logo img{
+        width:50px;
+        height:50px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero-inner{
+        padding:60px 20px;
+    }
+
+    .hero-card{
+        width:280px;
+        height:280px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .trust-inner{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .section{
+        padding:60px 18px;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+    .about-inner{
+        padding:60px 18px;
+    }
+
+    .about-box{
+        padding:25px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .newsletter-form{
+        flex-direction:column;
+        gap:8px;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button{
+        width:100%;
+    }
+
+    .footer-inner{
+        grid-template-columns:1fr;
+    }
+
+    .cart{
+        width:100%;
+        right:-100%;
+    }
+
+    .payment-options{
+        grid-template-columns:1fr;
+    }
+
+    .btn-outline{
+        margin-left:0;
+        margin-top:10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="navbar">
+
+    <div class="logo" onclick="scrollToSection('home')">
+
+        <img src="pure_douceur_logo.jpg" alt="Pure Douceur Logo">
+
+        <div class="logo-text">
+            Pure Douceur
+        </div>
+
+    </div>
+
+    <nav id="nav">
+
+        <a href="#home">Accueil</a>
+        <a href="#products">Boutique</a>
+        <a href="#about">À propos</a>
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+    <div class="nav-actions">
+
+        <button class="icon-btn" onclick="openCart()">
+            🛒
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="icon-btn menu-btn" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </div>
+
+</div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+<div class="hero-inner">
+
+    <div>
+
+        <div class="hero-tag">
+            Savons & soins
+        </div>
+
+        <h1>
+            La douceur qui prend soin de vous.
+        </h1>
+
+        <p>
+            Découvrez la sélection Pure Douceur de savons et soins
+            pensés pour apporter douceur, fraîcheur et bien-être
+            à votre routine quotidienne.
+        </p>
+
+        <a href="#products" class="btn">
+            Découvrir nos produits
+        </a>
+
+        <a href="#about" class="btn btn-outline">
+            En savoir plus
+        </a>
+
+    </div>
+
+    <div class="hero-image">
+
+        <div class="hero-card">
+
+            <img src="hero.png" alt="Savon Pure Douceur">
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= TRUST ================= -->
+
+<section class="trust">
+
+<div class="trust-inner">
+
+    <div class="trust-item">
+        <strong>🌿 Sélection soin</strong>
+        <span>Des produits choisis avec soin</span>
+    </div>
+
+    <div class="trust-item">
+        <strong>✨ Qualité</strong>
+        <span>Une attention particulière aux produits</span>
+    </div>
+
+    <div class="trust-item">
+        <strong>📦 Livraison</strong>
+        <span>Commandez facilement</span>
+    </div>
+
+    <div class="trust-item">
+        <strong>💬 Assistance</strong>
+        <span>Nous sommes à votre écoute</span>
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="section" id="products">
+
+<div class="section-title">
+
+    <small>Notre sélection</small>
+
+    <h2>Nos savons</h2>
+
+</div>
+
+
+<div class="controls">
+
+    <input
+        type="text"
+        class="search"
+        id="search"
+        placeholder="Rechercher un produit..."
+        oninput="displayProducts()"
+    >
+
+    <select class="filter" id="filter" onchange="displayProducts()">
+
+        <option value="all">
+            Toutes les catégories
+        </option>
+
+        <option value="Savons">
+            Savons
+        </option>
+
+        <option value="Gels de douche">
+            Gels de douche
+        </option>
+
+    </select>
+
+</div>
+
+
+<div class="products" id="productsGrid"></div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+<div class="about-inner">
+
+    <div class="about-box">
+
+        <h2>
+            Pure Douceur
+        </h2>
+
+        <p>
+            Pure Douceur est une boutique dédiée aux savons et aux
+            soins du quotidien. Notre objectif est de proposer une
+            sélection de produits qui s'intègrent facilement dans
+            votre routine et vous procurent une agréable sensation
+            de douceur.
+        </p>
+
+        <br>
+
+        <p>
+            Prenez soin de vous, simplement.
+        </p>
+
+    </div>
+
+
+    <div class="features">
+
+        <div class="feature">
+
+            <div class="feature-icon">🌸</div>
+
+            <h3>
+                Douceur
+            </h3>
+
+            <p>
+                Des produits sélectionnés pour votre routine.
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            <div class="feature-icon">✨</div>
+
+            <h3>
+                Beauté
+            </h3>
+
+            <p>
+                Une expérience simple et agréable.
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            <div class="feature-icon">💧</div>
+
+            <h3>
+                Soin
+            </h3>
+
+            <p>
+                Prenez soin de votre peau au quotidien.
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            <div class="feature-icon">🤍</div>
+
+            <h3>
+                Confiance
+            </h3>
+
+            <p>
+                Une boutique pensée pour nos clientes.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section class="newsletter">
+
+    <h2>
+        Restez informé(e)
+    </h2>
+
+    <p>
+        Recevez nos nouveautés et nos offres directement.
+    </p>
+
+    <form class="newsletter-form" onsubmit="subscribe(event)">
+
+        <input
+            type="email"
+            placeholder="Votre adresse email"
+            required
+        >
+
+        <button type="submit">
+            S'inscrire
+        </button>
+
+    </form>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+<div class="footer-inner">
+
+    <div class="footer-brand">
+
+        <h2>Pure Douceur</h2>
+
+        <p>
+            Savons & soins.
+            <br>
+            La douceur qui prend soin de vous.
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h3>Boutique</h3>
+
+        <a href="#products">
+            Tous les produits
+        </a>
+
+        <a href="#products">
+            Savons
+        </a>
+
+    </div>
+
+
+    <div>
+
+        <h3>Informations</h3>
+
+        <a href="#about">
+            À propos
+        </a>
+
+        <a href="#">
+            Conditions
+        </a>
+
+        <a href="#">
+            Politique de confidentialité
+        </a>
+
+    </div>
+
+
+    <div>
+
+        <h3>Contact</h3>
+
+        <a href="mailto:contact@puredouceur.com">
+            Email
+        </a>
+
+        <a href="#" onclick="openWhatsApp()">
+            WhatsApp
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="copyright">
+
+    © <span id="year"></span> Pure Douceur — Tous droits réservés.
+
+</div>
+
+</footer>
+
+
+<!-- ================= CART ================= -->
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<aside class="cart" id="cart">
+
+    <div class="cart-header">
+
+        <h2>
+            Votre panier
+        </h2>
+
+        <button class="close" onclick="closeCart()">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="cart-items" id="cartItems">
+
+        <p style="text-align:center;color:#777;margin-top:30px;">
+            Votre panier est vide.
+        </p>
+
+    </div>
+
+
+    <div class="cart-footer">
+
+        <div class="total">
+
+            <span>Total</span>
+
+            <span id="cartTotal">
+                0 FCFA
+            </span>
+
+        </div>
+
+        <button class="btn checkout-btn" onclick="openCheckout()">
+            Passer la commande
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- ================= CHECKOUT ================= -->
+
+<div class="modal" id="checkoutModal">
+
+<div class="modal-box">
+
+    <div class="modal-header">
+
+        <h2>
+            Finaliser la commande
+        </h2>
+
+        <button class="close" onclick="closeCheckout()">
+            ×
+        </button>
+
+    </div>
+
+
+    <form id="checkoutForm" onsubmit="submitOrder(event)">
+
+        <div class="form-group">
+
+            <label>
+                Nom complet
+            </label>
+
+            <input
+                type="text"
+                id="customerName"
+                required
+                placeholder="Votre nom"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Téléphone
+            </label>
+
+            <input
+                type="tel"
+                id="customerPhone"
+                required
+                placeholder="Ex : 97 XX XX XX"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Adresse de livraison
+            </label>
+
+            <textarea
+                id="customerAddress"
+                required
+                placeholder="Votre adresse de livraison"
+            ></textarea>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Mode de paiement
+            </label>
+
+            <div class="payment-options">
+
+                <div
+                    class="payment selected"
+                    onclick="selectPayment(this,'MTN Mobile Money')"
+                >
+                    📱<br>
+                    MTN MoMo
+                </div>
+
+                <div
+                    class="payment"
+                    onclick="selectPayment(this,'Moov Money')"
+                >
+                    📱<br>
+                    Moov Money
+                </div>
+
+                <div
+                    class="payment"
+                    onclick="selectPayment(this,'Celtiis Cash')"
+                >
+                    📱<br>
+                    Celtiis
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <input type="hidden" id="paymentMethod" value="MTN Mobile Money">
+
+
+        <div class="order-summary">
+
+            <strong>
+                Résumé
+            </strong>
+
+            <div id="checkoutSummary" style="margin-top:10px;"></div>
+
+            <hr style="margin:15px 0;border:0;border-top:1px solid #ddd;">
+
+            <strong>
+                Total :
+                <span id="checkoutTotal">
+                    0 FCFA
+                </span>
+            </strong>
+
+        </div>
+
+
+        <button class="btn" style="width:100%;" type="submit">
+
+            Confirmer la commande
+
+        </button>
+
+    </form>
+
+
+    <div id="successMessage" class="success" style="display:none;">
+
+        <div class="check">
+            ✓
+        </div>
+
+        <h2 style="color:#7b1830;margin-bottom:10px;">
+            Commande enregistrée !
+        </h2>
+
+        <p>
+            Merci pour votre commande chez Pure Douceur.
+        </p>
+
+        <br>
+
+        <button class="btn" onclick="closeCheckout()">
+            Fermer
+        </button>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   PRODUCT DATABASE
+========================= */
+
+const products = [
+
+    {
+        id:1,
+        name:"Savon Miracle de la marque ARVEA",
+        price:4400,
+        category:"Savons",
+        image:"miracle soap.png",
+        description:"Savon Miracle pour votre routine de soin. Enrichi en huile naturels et en vitamines,il hydrates, nourrit et adoucit votre peau tout en y laissant une fragrance unique, plaisante et relaxante. Ce savon est très efficace pour le traitement et la mise en valeur de votre visage et de tout types de peaux."
+    },
+
+    {
+        id:2,
+        name:"Savon à l'huile d'argan de la marque ARVEA",
+        price:2300,
+        category:"Savons",
+        image:"argan oil box.png",
+        description:"Savon à l'huile d'argan. Ce savon est très efficace pour le traitement et la mise en valeur des peaux sèches."
+    },
+
+    {
+        id:3,
+        name:"Savon Aloe Vera de la marque ARVEA",
+        price:2300,
+        category:"Savons",
+        image:"aloevera box.png",
+        description:"Savon à l'Aloe Vera pour votre routine. Ce savon est très efficace pour le traitement et la mise en valeur des peaux grasses. "
+    },
+
+    {
+        id:4,
+        name:"Savon miel & son de blé de la marque ARVEA",
+        price:2600,
+        category:"Savons",
+        image:"miel box.png",
+        description:"Savon au miel et au son de blé. Ce savon est très efficace pour le traitement et la mise en valeur des peaux normales et combinées."
+    },
+
+ {
+        id:5,
+        name:"Gel de douche tropical cocktail coco de la marque ARVEA",
+        price:4600,
+        category:"Gels de douche",
+        image:"gel_de_douche_tropical_coco.png",
+        description:"Gel de douche tropical cocktail coco 400 ML. Ce gel nettoie et raffraichit la peau, respectes la barrière cutanée, rends votre peau douce et souple et transformes votre bain en un pure moment de plaisir et de douceur "
+    }
+
+];
+
+
+/* =========================
+   CART
+========================= */
+
+let cart = JSON.parse(localStorage.getItem("pureDouceurCart")) || [];
+
+
+function saveCart(){
+
+    localStorage.setItem(
+        "pureDouceurCart",
+        JSON.stringify(cart)
+    );
+
+}
+
+
+function addToCart(id){
+
+    const product = products.find(p => p.id === id);
+
+    if(!product) return;
+
+    const existing = cart.find(item => item.id === id);
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cart.push({
+            ...product,
+            quantity:1
+        });
+
+    }
+
+    saveCart();
+    updateCart();
+
+    openCart();
+
+}
+
+
+function updateQuantity(id,change){
+
+    const item = cart.find(p => p.id === id);
+
+    if(!item) return;
+
+    item.quantity += change;
+
+    if(item.quantity <= 0){
+
+        cart = cart.filter(p => p.id !== id);
+
+    }
+
+    saveCart();
+    updateCart();
+
+}
+
+
+function removeFromCart(id){
+
+    cart = cart.filter(p => p.id !== id);
+
+    saveCart();
+    updateCart();
+
+}
+
+
+function getCartTotal(){
+
+    return cart.reduce(
+        (total,item) =>
+        total + item.price * item.quantity,
+        0
+    );
+
+}
+
+
+function formatPrice(price){
+
+    return price.toLocaleString("fr-FR") + " FCFA";
+
+}
+
+
+/* =========================
+   DISPLAY PRODUCTS
+========================= */
+
+function displayProducts(){
+
+    const grid =
+        document.getElementById("productsGrid");
+
+    const search =
+        document.getElementById("search")
+        .value
+        .toLowerCase();
+
+    const filter =
+        document.getElementById("filter")
+        .value;
+
+
+    const filtered = products.filter(product => {
+
+        const matchesSearch =
+            product.name
+            .toLowerCase()
+            .includes(search);
+
+        const matchesFilter =
+            filter === "all" ||
+            product.category === filter;
+
+        return matchesSearch && matchesFilter;
+
+    });
+
+
+    if(filtered.length === 0){
+
+        grid.innerHTML = `
+            <p style="
+                grid-column:1/-1;
+                text-align:center;
+                color:#777;
+                padding:50px;
+            ">
+                Aucun produit trouvé.
+            </p>
+        `;
+
+        return;
+
+    }
+
+
+    grid.innerHTML =
+        filtered.map(product => `
+
+            <article class="product">
+
+                <div class="badge">
+                    DISPONIBLE
+                </div>
+
+                <div class="product-image">
+
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <div class="product-category">
+                        ${product.category}
+                    </div>
+
+                    <h3>
+                        ${product.name}
+                    </h3>
+
+                    <p class="product-description">
+                        ${product.description}
+                    </p>
+
+                    <div class="price">
+                        ${formatPrice(product.price)}
+                    </div>
+
+                    <button
+                        class="add-btn"
+                        onclick="addToCart(${product.id})"
+                    >
+                        Ajouter au panier
+                    </button>
+
+                </div>
+
+            </article>
+
+        `).join("");
+
+}
+
+
+/* =========================
+   DISPLAY CART
+========================= */
+
+function updateCart(){
+
+    const cartItems =
+        document.getElementById("cartItems");
+
+    const cartCount =
+        document.getElementById("cartCount");
+
+    const cartTotal =
+        document.getElementById("cartTotal");
+
+
+    const count =
+        cart.reduce(
+            (sum,item) =>
+            sum + item.quantity,
+            0
+        );
+
+
+    cartCount.textContent = count;
+
+    cartTotal.textContent =
+        formatPrice(getCartTotal());
+
+
+    if(cart.length === 0){
+
+        cartItems.innerHTML = `
+            <p style="
+                text-align:center;
+                color:#777;
+                margin-top:30px;
+            ">
+                Votre panier est vide.
+            </p>
+        `;
+
+        return;
+
+    }
+
+
+    cartItems.innerHTML =
+        cart.map(item => `
+
+            <div class="cart-item">
+
+                <img
+                    src="${item.image}"
+                    alt="${item.name}"
+                >
+
+                <div class="cart-item-info">
+
+                    <h4>
+                        ${item.name}
+                    </h4>
+
+                    <div class="cart-price">
+                        ${formatPrice(item.price)}
+                    </div>
+
+                    <div class="qty">
+
+                        <button
+                            onclick="updateQuantity(${item.id},-1)"
+                        >
+                            −
+                        </button>
+
+                        <span>
+                            ${item.quantity}
+                        </span>
+
+                        <button
+                            onclick="updateQuantity(${item.id},1)"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                    <button
+                        class="remove"
+                        onclick="removeFromCart(${item.id})"
+                    >
+                        Supprimer
+                    </button>
+
+                </div>
+
+            </div>
+
+        `).join("");
+
+}
+
+
+/* =========================
+   CART OPEN/CLOSE
+========================= */
+
+function openCart(){
+
+    document
+        .getElementById("cart")
+        .classList.add("open");
+
+    document
+        .getElementById("overlay")
+        .classList.add("active");
+
+}
+
+
+function closeCart(){
+
+    document
+        .getElementById("cart")
+        .classList.remove("open");
+
+    document
+        .getElementById("overlay")
+        .classList.remove("active");
+
+}
+
+
+/* =========================
+   CHECKOUT
+========================= */
+
+function openCheckout(){
+
+    if(cart.length === 0){
+
+        alert("Votre panier est vide.");
+
+        return;
+
+    }
+
+    closeCart();
+
+    document
+        .getElementById("checkoutModal")
+        .classList.add("active");
+
+
+    document
+        .getElementById("checkoutForm")
+        .style.display = "block";
+
+
+    document
+        .getElementById("successMessage")
+        .style.display = "none";
+
+
+    updateCheckout();
+
+}
+
+
+function closeCheckout(){
+
+    document
+        .getElementById("checkoutModal")
+        .classList.remove("active");
+
+}
+
+
+function updateCheckout(){
+
+    const summary =
+        document.getElementById("checkoutSummary");
+
+    const total =
+        document.getElementById("checkoutTotal");
+
+
+    summary.innerHTML =
+        cart.map(item => `
+
+            <div style="
+                display:flex;
+                justify-content:space-between;
+                margin-top:8px;
+            ">
+
+                <span>
+                    ${item.name} × ${item.quantity}
+                </span>
+
+                <strong>
+                    ${formatPrice(item.price * item.quantity)}
+                </strong>
+
+            </div>
+
+        `).join("");
+
+
+    total.textContent =
+        formatPrice(getCartTotal());
+
+}
+
+
+function selectPayment(element,method){
+
+    document
+        .querySelectorAll(".payment")
+        .forEach(p =>
+            p.classList.remove("selected")
+        );
+
+    element.classList.add("selected");
+
+    document
+        .getElementById("paymentMethod")
+        .value = method;
+
+}
+
+
+/* =========================
+   SUBMIT ORDER
+========================= */
+
+function submitOrder(event){
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById("customerName").value;
+
+    const phone =
+        document.getElementById("customerPhone").value;
+
+    const address =
+        document.getElementById("customerAddress").value;
+
+    const payment =
+        document.getElementById("paymentMethod").value;
+
+
+    let message =
+        "Bonjour Pure Douceur !%0A%0A";
+
+    message +=
+        "*Nouvelle commande*%0A%0A";
+
+    message +=
+        "👤 Nom : " +
+        encodeURIComponent(name) +
+        "%0A";
+
+    message +=
+        "📱 Téléphone : " +
+        encodeURIComponent(phone) +
+        "%0A";
+
+    message +=
+        "📍 Adresse : " +
+        encodeURIComponent(address) +
+        "%0A";
+
+    message +=
+        "💳 Paiement : " +
+        encodeURIComponent(payment) +
+        "%0A%0A";
+
+    message +=
+        "*Produits :*%0A";
+
+
+    cart.forEach(item => {
+
+        message +=
+            "• " +
+            encodeURIComponent(item.name) +
+            " x" +
+            item.quantity +
+            " — " +
+            encodeURIComponent(formatPrice(
+                item.price * item.quantity
+            )) +
+            "%0A";
+
+    });
+
+
+    message +=
+        "%0A*TOTAL : " +
+        encodeURIComponent(formatPrice(
+            getCartTotal()
+        )) +
+        "*";
+
+
+    /*
+       IMPORTANT:
+       REMPLACE ce numéro par le numéro WhatsApp
+       de Pure Douceur.
+       
+       Exemple:
+       229XXXXXXXX
+    */
+
+    const whatsappNumber =
+        "2290140428143";
+
+
+    const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        message;
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+
+    document
+        .getElementById("checkoutForm")
+        .style.display = "none";
+
+    document
+        .getElementById("successMessage")
+        .style.display = "block";
+
+
+    cart = [];
+
+    saveCart();
+    updateCart();
+
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+function openWhatsApp(){
+
+    const number =
+        "229XXXXXXXX";
+
+    window.open(
+        "https://wa.me/" + number,
+        "_blank"
+    );
+
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+function toggleMenu(){
+
+    document
+        .getElementById("nav")
+        .classList.toggle("mobile-open");
+
+}
+
+
+function scrollToSection(id){
+
+    document
+        .getElementById(id)
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+}
+
+
+/* =========================
+   NEWSLETTER
+========================= */
+
+function subscribe(event){
+
+    event.preventDefault();
+
+    alert(
+        "Merci ! Vous êtes maintenant inscrit(e) aux nouveautés Pure Douceur."
+    );
+
+    event.target.reset();
+
+}
+
+
+/* =========================
+   YEAR
+========================= */
+
+document
+    .getElementById("year")
+    .textContent =
+    new Date().getFullYear();
+
+
+/* =========================
+   INITIALIZATION
+========================= */
+
+displayProducts();
+
+updateCart();
+
+</script>
+
+</body>
+</html>
